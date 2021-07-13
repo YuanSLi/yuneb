@@ -1,8 +1,6 @@
 package com.xxxx.server.controller;
 
-import cn.hutool.core.util.IdUtil;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.xxxx.server.config.config.redis.RedisCache;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 验证码
@@ -28,12 +25,8 @@ public class CaptchaController {
 
     private static final String captcha = "captcha";
 
-
     @Autowired
     private DefaultKaptcha defaultKaptcha;
-
-    @Resource
-    private RedisCache redisCache;
 
     @ApiOperation(value = "验证码")
     @GetMapping(value = "/captcha", produces = "image/jpeg")

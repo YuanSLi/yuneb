@@ -35,5 +35,5 @@ public interface IAdminService extends IService<Admin> {
      */
     Admin getAdminByUserName(String username);
 
-
+    
 }

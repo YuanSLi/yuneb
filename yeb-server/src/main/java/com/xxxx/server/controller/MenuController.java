@@ -29,9 +29,11 @@ public class MenuController {
 
     @ApiOperation(value = "通过用户id查询菜单列表")
     @GetMapping("/menu")
+
     public List<Menu> getMenuByAdminId(){
 
-        return menuService.getMenuByAdminId();
+        List<Menu> menuByAdminId = menuService.getMenuByAdminId();
+        return menuByAdminId;
     }
 
 }
